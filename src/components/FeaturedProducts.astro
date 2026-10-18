@@ -1,0 +1,14 @@
+---
+import products from '../data/products.json';
+---
+<section class="max-w-7xl mx-auto p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 text-espresso fade-in">
+  {products.map(product => (
+    <article key={product.id} class="border border-bronze p-4 rounded-sm">
+      <div class="aspect-[4/5] bg-espresso bg-opacity-10 rounded mb-4 flex items-center justify-center text-sm text-ivory">Image Placeholder</div>
+      <h3 class="font-cormorant text-xl mb-1">{product.name}</h3>
+      <p class="text-sm mb-2">{product.material}</p>
+      <p class="font-montserrat uppercase tracking-widest text-sm">{product.price}</p>
+    </article>
+  ))}
+</section>
+<hr class="divider" />

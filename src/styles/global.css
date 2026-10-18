@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Montserrat:wght@500&display=swap');
+
+:root {
+  --espresso: #241A15;
+  --cognac: #A66A3F;
+  --ivory: #F4EFE7;
+  --bronze: #9A6A3A;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--ivory);
+  color: var(--espresso);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+}
+
+a {
+  color: var(--espresso);
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  color: var(--cognac);
+  outline: none;
+}
+
+button, a, input, select, textarea {
+  font-family: 'Montserrat', sans-serif;
+}
+
+:focus-visible {
+  outline: 2px solid var(--cognac);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Fade-in on scroll animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Button styles */
+.btn-primary {
+  background-color: var(--espresso);
+  color: var(--ivory);
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.75rem 1.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--cognac);
+}
+
+/* Bronze divider lines */
+.divider {
+  border: none;
+  border-top: 1px solid var(--bronze);
+  margin: 2rem 0;
+}

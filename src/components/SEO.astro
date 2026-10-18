@@ -1,0 +1,39 @@
+---
+const { title, description, url, image, type = 'website', product } = Astro.props;
+---
+<head>
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content={type} />
+  {url && <meta property="og:url" content={url} />}
+  {image && <meta property="og:image" content={image} />}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  {image && <meta name="twitter:image" content={image} />}
+  <script type="application/ld+json">
+    {JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': type === 'product' ? 'Product' : 'Organization',
+      name: 'ZEVRAN',
+      url: url || 'https://zevran.example.com',
+      logo: 'https://zevran.example.com/logo.svg',
+      description: description,
+      ...(type === 'product' && product ? {
+        sku: product.id,
+        name: product.name,
+        description: product.description,
+        image: product.images || [],
+        offers: {
+          '@type': 'Offer',
+          priceCurrency: 'PKR',
+          price: product.price || 'TBD',
+          availability: 'https://schema.org/InStock'
+        }
+      } : {})
+    })}
+  </script>
+</head>

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "wallet",
+    "name": "Wallet",
+    "material": "[MATERIAL: confirm with supplier]",
+    "price": "PKR [price TBD]"
+  },
+  {
+    "id": "belt",
+    "name": "Belt",
+    "material": "[MATERIAL: confirm with supplier]",
+    "price": "PKR [price TBD]"
+  },
+  {
+    "id": "card-holder",
+    "name": "Card Holder",
+    "material": "[MATERIAL: confirm with supplier]",
+    "price": "PKR [price TBD]"
+  },
+  {
+    "id": "key-holder",
+    "name": "Key Holder",
+    "material": "[MATERIAL: confirm with supplier]",
+    "price": "PKR [price TBD]"
+  }
+]

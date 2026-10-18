@@ -1,0 +1,83 @@
+---
+import products from '../../data/products.json';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+export function getStaticPaths() {
+  return products.map((product) => ({
+    params: { id: product.id },
+    props: { product },
+  }));
+}
+
+const { product } = Astro.props;
+
+---
+<html lang="en">
+  <head>
+    <title>{product.name} - ZEVRAN</title>
+    <meta name="description" content={`Detailed view of ${product.name} from ZEVRAN premium leather goods.`} />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body class="bg-ivory text-espresso font-montserrat">
+    <Header />
+    <main class="max-w-7xl mx-auto p-6 grid grid-cols-1 md:grid-cols-2 gap-8 fade-in">
+      <section class="space-y-4">
+        <div class="aspect-[4/5] bg-espresso bg-opacity-10 rounded overflow-hidden flex items-center justify-center">
+          <img src={`/images/products/${product.id}-1.jpg`} alt={`${product.name} image 1`} loading="lazy" width="400" height="500" class="object-cover w-full h-full" />
+        </div>
+        <div class="flex space-x-4">
+          <img src={`/images/products/${product.id}-1.jpg`} alt={`${product.name} thumbnail 1`} loading="lazy" width="80" height="100" class="object-cover cursor-pointer border border-bronze rounded" />
+          <img src={`/images/products/${product.id}-2.jpg`} alt={`${product.name} thumbnail 2`} loading="lazy" width="80" height="100" class="object-cover cursor-pointer border border-bronze rounded" />
+          <img src={`/images/products/${product.id}-3.jpg`} alt={`${product.name} thumbnail 3`} loading="lazy" width="80" height="100" class="object-cover cursor-pointer border border-bronze rounded" />
+        </div>
+      </section>
+      <section class="space-y-6">
+        <h1 class="font-cormorant text-3xl font-semibold">{product.name}</h1>
+        <p class="uppercase tracking-widest font-montserrat text-sm">{product.material}</p>
+        <p class="font-montserrat text-lg font-semibold">{product.price}</p>
+
+        <form class="space-y-4" onSubmit={e => e.preventDefault()} aria-label="Order form">
+          <label for="color" class="block font-semibold">Color</label>
+          <select id="color" name="color" class="w-full border border-bronze rounded p-2">
+            <option>Natural</option>
+            <option>Dark Brown</option>
+            <option>Black</option>
+          </select>
+
+          <label for="size" class="block font-semibold">Size</label>
+          <select id="size" name="size" class="w-full border border-bronze rounded p-2">
+            <option>Small</option>
+            <option>Medium</option>
+            <option>Large</option>
+          </select>
+
+          <label for="quantity" class="block font-semibold">Quantity</label>
+          <input type="number" id="quantity" name="quantity" min="1" value="1" class="w-full border border-bronze rounded p-2" />
+
+          <button type="submit" class="btn-primary">
+            Order on WhatsApp
+          </button>
+        </form>
+
+        <p class="text-sm italic">Request monogram (customized items are non-returnable).</p>
+
+        <section class="space-y-2">
+          <h2 class="font-semibold">Description</h2>
+          <p>{product.description || "Honest, minimal design crafted with care."}</p>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="font-semibold">Care Instructions</h2>
+          <p>{product.care || "Avoid water and direct sunlight. Use leather conditioner sparingly."}</p>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="font-semibold">Dimensions</h2>
+          <p>{product.dimensions || "Approximate sizes, please confirm before order."}</p>
+        </section>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>
