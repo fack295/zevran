@@ -1,5 +1,7 @@
 ---
+import '../../styles/global.css';
 import products from '../../data/products.json';
+import { defaultBrandConfig, buildWhatsAppLink } from '../../data/brandConfig';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 
@@ -11,6 +13,14 @@ export function getStaticPaths() {
 }
 
 const { product } = Astro.props;
+
+const whatsappLink = buildWhatsAppLink(defaultBrandConfig.whatsappNumber, {
+  name: product.name,
+  color: 'Select color',
+  size: 'Standard',
+  quantity: 1,
+  priceDisplay: product.priceDisplay
+});
 
 ---
 <html lang="en">
@@ -34,30 +44,34 @@ const { product } = Astro.props;
       </section>
       <section class="space-y-6">
         <h1 class="font-cormorant text-3xl font-semibold">{product.name}</h1>
+        <p class="italic text-cognac text-sm">{product.tagline}</p>
         <p class="uppercase tracking-widest font-montserrat text-sm">{product.material}</p>
-        <p class="font-montserrat text-lg font-semibold">{product.price}</p>
+        <p class="font-montserrat text-lg font-semibold">{product.priceDisplay}</p>
 
         <form class="space-y-4" onSubmit={e => e.preventDefault()} aria-label="Order form">
           <label for="color" class="block font-semibold">Color</label>
           <select id="color" name="color" class="w-full border border-bronze rounded p-2">
-            <option>Natural</option>
-            <option>Dark Brown</option>
-            <option>Black</option>
+            {product.colors.map(color => (
+              <option value={color.name}>{color.name}</option>
+            ))}
           </select>
 
           <label for="size" class="block font-semibold">Size</label>
           <select id="size" name="size" class="w-full border border-bronze rounded p-2">
-            <option>Small</option>
-            <option>Medium</option>
-            <option>Large</option>
+            {product.sizes.map(size => (
+              <option value={size}>{size}</option>
+            ))}
           </select>
 
           <label for="quantity" class="block font-semibold">Quantity</label>
           <input type="number" id="quantity" name="quantity" min="1" value="1" class="w-full border border-bronze rounded p-2" />
 
-          <button type="submit" class="btn-primary">
+          <label for="monogram" class="block font-semibold">Monogram (Optional)</label>
+          <input type="text" id="monogram" name="monogram" placeholder="Enter 2-3 letters" maxlength="3" class="w-full border border-bronze rounded p-2" />
+
+          <a href={whatsappLink} target="_blank" rel="noopener noreferrer" class="btn-primary inline-block text-center">
             Order on WhatsApp
-          </button>
+          </a>
         </form>
 
         <p class="text-sm italic">Request monogram (customized items are non-returnable).</p>
@@ -68,13 +82,27 @@ const { product } = Astro.props;
         </section>
 
         <section class="space-y-2">
-          <h2 class="font-semibold">Care Instructions</h2>
-          <p>{product.care || "Avoid water and direct sunlight. Use leather conditioner sparingly."}</p>
+          <h2 class="font-semibold">Specifications</h2>
+          <ul class="list-disc list-inside space-y-1">
+            {product.specs.map(spec => (
+              <li><span class="font-semibold">{spec.label}:</span> {spec.value}</li>
+            ))}
+          </ul>
         </section>
 
         <section class="space-y-2">
           <h2 class="font-semibold">Dimensions</h2>
           <p>{product.dimensions || "Approximate sizes, please confirm before order."}</p>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="font-semibold">Weight</h2>
+          <p>{product.weight || "TBD"}</p>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="font-semibold">Care Instructions</h2>
+          <p>{product.careInstructions || "Avoid water and direct sunlight. Use leather conditioner sparingly."}</p>
         </section>
       </section>
     </main>

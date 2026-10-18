@@ -1,26 +1,112 @@
 [
   {
     "id": "wallet",
-    "name": "Wallet",
+    "name": "Classic Bifold Wallet",
+    "category": "Wallets",
     "material": "[MATERIAL: confirm with supplier]",
-    "price": "PKR [price TBD]"
+    "materialNote": "Pending supplier specification sheet. Hand-stitched with waxed polyester thread.",
+    "priceDisplay": "PKR [price TBD]",
+    "provisionalPrice": 4800,
+    "featured": true,
+    "tagline": "Slim architecture with dedicated cash compartment and 6 card bays.",
+    "description": "Engineered for longevity and pocket comfort. The Classic Bifold Wallet features clean turned edges, reinforced stress points, and an uncluttered silhouette that moulds to your daily carry over years of use.",
+    "dimensions": "11.2 cm × 9.0 cm × 1.2 cm (Closed)",
+    "weight": "84g",
+    "sizes": ["Standard"],
+    "colors": [
+      { "id": "espresso", "name": "Espresso", "hex": "#241A15" },
+      { "id": "cognac", "name": "Cognac", "hex": "#A66A3F" },
+      { "id": "tan", "name": "Classic Tan", "hex": "#C29369" }
+    ],
+    "allowsMonogram": true,
+    "careInstructions": "Keep away from prolonged dampness. Wipe with dry microfiber cloth. Condition with natural beeswax-based balm twice a year.",
+    "specs": [
+      { "label": "Card Capacity", "value": "6–10 Cards" },
+      { "label": "Currency Slot", "value": "Single full-length PKR/USD slot" },
+      { "label": "Hardware", "value": "None (pure fold profile)" },
+      { "label": "Edge Finish", "value": "Hand-burnished with natural gum" }
+    ]
   },
   {
     "id": "belt",
-    "name": "Belt",
+    "name": "Structured Leather Belt",
+    "category": "Belts",
     "material": "[MATERIAL: confirm with supplier]",
-    "price": "PKR [price TBD]"
+    "materialNote": "Pending supplier thickness and temper verification. Solid single-strip cut.",
+    "priceDisplay": "PKR [price TBD]",
+    "provisionalPrice": 5200,
+    "featured": true,
+    "tagline": "35mm versatile width with brushed antique bronze buckle.",
+    "description": "Cut from a single continuous leather hide with no synthetic fillers or cardboard cores. Features beveled and sealed edges with a robust solid buckle anchored by reinforced saddle stitching.",
+    "dimensions": "35mm width · 3.8mm thickness",
+    "weight": "210g",
+    "sizes": ["32\"", "34\"", "36\"", "38\"", "40\"", "42\""],
+    "colors": [
+      { "id": "cognac", "name": "Cognac", "hex": "#A66A3F" },
+      { "id": "espresso", "name": "Espresso", "hex": "#241A15" }
+    ],
+    "allowsMonogram": true,
+    "careInstructions": "Hang straight when not worn. Avoid rolling too tightly. Clean with mild leather soap if soiled.",
+    "specs": [
+      { "label": "Width", "value": "35 mm (Fits standard trouser loops)" },
+      { "label": "Buckle", "value": "Solid brushed brass/bronze finish" },
+      { "label": "Strap Holes", "value": "5 oval holes spaced 1 inch apart" },
+      { "label": "Construction", "value": "Single-piece unpadded cut" }
+    ]
   },
   {
     "id": "card-holder",
-    "name": "Card Holder",
+    "name": "Minimalist Card Holder",
+    "category": "Card Holders",
     "material": "[MATERIAL: confirm with supplier]",
-    "price": "PKR [price TBD]"
+    "materialNote": "Pending supplier tannery certification. Dual tone exterior.",
+    "priceDisplay": "PKR [price TBD]",
+    "provisionalPrice": 2400,
+    "featured": true,
+    "tagline": "Featherweight front-pocket design with thumb-glide card access.",
+    "description": "Constructed for the digital minimalist. Two precision-cut exterior pockets on each face with a central cavity for folded currency notes. Disappears into your front pocket.",
+    "dimensions": "10.0 cm × 7.2 cm × 0.4 cm",
+    "weight": "32g",
+    "sizes": ["Standard"],
+    "colors": [
+      { "id": "espresso-cognac", "name": "Espresso & Cognac", "hex": "#241A15" },
+      { "id": "espresso", "name": "All Espresso", "hex": "#1E1612" },
+      { "id": "cognac", "name": "All Cognac", "hex": "#A66A3F" }
+    ],
+    "allowsMonogram": true,
+    "careInstructions": "Do not overstuff beyond 6 cards to maintain leather tension. Store flat in clean, dry spaces.",
+    "specs": [
+      { "label": "Card Capacity", "value": "4–6 Cards + folded notes" },
+      { "label": "Pockets", "value": "4 external + 1 central slip" },
+      { "label": "Profile", "value": "Ultra-slim front pocket" },
+      { "label": "Logo", "value": "Blind debossed ZR monogram" }
+    ]
   },
   {
     "id": "key-holder",
-    "name": "Key Holder",
+    "name": "Loop Key Holder",
+    "category": "Key Holders",
     "material": "[MATERIAL: confirm with supplier]",
-    "price": "PKR [price TBD]"
+    "materialNote": "Pending supplier hardware tensile and leather batch sign-off.",
+    "priceDisplay": "PKR [price TBD]",
+    "provisionalPrice": 1600,
+    "featured": true,
+    "tagline": "Heavy-duty brass carabiner clip with reinforced hand-stitched strap.",
+    "description": "Built to withstand daily friction. Heavy solid bronze/brass carabiner easily latches onto belt loops or bag straps. The tactile leather loop softens with hands and gains an unmatched patina.",
+    "dimensions": "12.5 cm total length · 2.0 cm strap width",
+    "weight": "48g",
+    "sizes": ["Standard"],
+    "colors": [
+      { "id": "cognac", "name": "Cognac", "hex": "#A66A3F" },
+      { "id": "espresso", "name": "Espresso", "hex": "#241A15" }
+    ],
+    "allowsMonogram": true,
+    "careInstructions": "Wipe metal hardware dry if exposed to rain. Light leather oil keeps strap supple.",
+    "specs": [
+      { "label": "Hardware", "value": "Antique bronze quick-release snap" },
+      { "label": "Ring", "value": "Flat 30mm split keyring" },
+      { "label": "Carry Method", "value": "Belt loop clip or pocket slip" },
+      { "label": "Closure", "value": "Saddle stitched anchor joint" }
+    ]
   }
 ]

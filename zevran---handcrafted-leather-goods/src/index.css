@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --espresso: #241A15;
+    --cognac: #A66A3F;
+    --ivory: #F4EFE7;
+    --bronze: #9A6A3A;
+  }
+
+  body {
+    background-color: var(--ivory);
+    color: var(--espresso);
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+}
+
+/* Custom utility styles for luxury editorial leather aesthetic */
+.font-serif-luxury {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-sans-luxury {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.tracking-tagline {
+  letter-spacing: 0.22em;
+}
+
+.hairline-bronze {
+  border-color: rgba(154, 106, 58, 0.25);
+}
+
+.hairline-espresso {
+  border-color: rgba(36, 26, 21, 0.12);
+}
+
+.hairline-ivory {
+  border-color: rgba(244, 239, 231, 0.15);
+}

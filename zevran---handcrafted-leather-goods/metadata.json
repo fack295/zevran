@@ -1,0 +1,6 @@
+{
+  "name": "ZEVRAN - Handcrafted Leather Goods",
+  "description": "Considered design and honest materials, made to become yours. Premium wallets, belts, card holders, and key holders in Pakistan.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
